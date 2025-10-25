@@ -1,0 +1,141 @@
+@page "/weather-server"
+@using BlazorJwtAuthApiDemo.Shared.Models
+@using BlazorJwtAuthApiDemo.Shared.Services
+@using Microsoft.AspNetCore.Authorization
+@inject IApiService ApiService
+@attribute [Authorize]
+@rendermode InteractiveServer
+
+<PageTitle>Weather Forecast (Server)</PageTitle>
+
+<div class="container py-4">
+    <h1 class="mb-4">
+        <span class="bi bi-cloud-sun me-2"></span>
+        Weather Forecast <span class="badge bg-success">Server</span>
+    </h1>
+
+    <div class="alert alert-success mb-4">
+        <i class="bi bi-server me-2"></i>
+        This <strong>Blazor Server</strong> component demonstrates fetching data from the API using <code>ApiService</code> with JWT authentication.
+    </div>
+
+    @if (forecasts == null)
+    {
+        <div class="text-center py-5">
+            <div class="spinner-border text-success mb-3" role="status" style="width: 3rem; height: 3rem;">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <p class="text-muted">Loading weather data from API...</p>
+        </div>
+    }
+    else if (errorMessage != null)
+    {
+        <div class="alert alert-danger">
+            <h5 class="alert-heading">
+                <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                Error Loading Weather Data
+            </h5>
+            <p class="mb-2"><strong>@errorMessage</strong></p>
+            <hr />
+            <p class="mb-0 small">
+                <strong>Troubleshooting:</strong>
+            </p>
+            <ul class="small mb-0">
+                <li>Make sure you're logged in with valid credentials</li>
+                <li>Verify the API is running at <code>https://localhost:7230</code></li>
+                <li>Check that your JWT token hasn't expired</li>
+            </ul>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-success mb-4">
+            <i class="bi bi-check-circle-fill me-2"></i>
+            <strong>Success!</strong> Weather data loaded from API using JWT authentication in Server mode.
+        </div>
+
+        <div class="card shadow-sm">
+            <div class="card-header bg-success text-white">
+                <h5 class="mb-0">
+                    <i class="bi bi-calendar-week me-2"></i>
+                    5-Day Forecast
+                </h5>
+            </div>
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-hover mb-0">
+                        <thead class="table-light">
+                            <tr>
+                                <th class="px-4 py-3">
+                                    <i class="bi bi-calendar3 me-2"></i>Date
+                                </th>
+                                <th class="px-4 py-3">
+                                    <i class="bi bi-thermometer-half me-2"></i>Temp. (C)
+                                </th>
+                                <th class="px-4 py-3">
+                                    <i class="bi bi-thermometer me-2"></i>Temp. (F)
+                                </th>
+                                <th class="px-4 py-3">
+                                    <i class="bi bi-cloud-sun-fill me-2"></i>Summary
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var forecast in forecasts)
+                            {
+                                <tr>
+                                    <td class="px-4 py-3">
+                                        <strong>@forecast.Date.ToShortDateString()</strong>
+                                    </td>
+                                    <td class="px-4 py-3">
+                                        <span class="badge bg-info">@forecast.TemperatureC°C</span>
+                                    </td>
+                                    <td class="px-4 py-3">
+                                        <span class="badge bg-warning text-dark">@forecast.TemperatureF°F</span>
+                                    </td>
+                                    <td class="px-4 py-3">
+                                        <span class="text-muted">@forecast.Summary</span>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-4 p-3 bg-light rounded">
+            <h6 class="fw-bold mb-2">
+                <i class="bi bi-shield-check me-2"></i>How JWT Authentication Works in Server Mode:
+            </h6>
+            <ol class="small mb-0">
+                <li>JWT token is retrieved from authentication claims (cookie-based auth)</li>
+                <li>The Server <code>ApiService</code> extracts the JWT from <code>AuthenticationStateProvider</code></li>
+                <li>Token is added to the Authorization header as "Bearer [token]"</li>
+                <li>API validates the JWT and returns weather data if valid</li>
+                <li>Everything runs on the server via SignalR connection</li>
+            </ol>
+        </div>
+    }
+</div>
+
+@code {
+    private WeatherForecast[]? forecasts;
+    private string? errorMessage;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            forecasts = await ApiService.GetAsync<WeatherForecast[]>("weatherforecast");
+        }
+        catch (HttpRequestException ex)
+        {
+            errorMessage = $"HTTP error: {ex.Message}";
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"Failed to load weather data: {ex.Message}";
+        }
+    }
+}

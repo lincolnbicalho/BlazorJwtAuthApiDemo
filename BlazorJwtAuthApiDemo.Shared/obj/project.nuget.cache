@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "dgSpecHash": "WBZk3b0gdpc=",
+  "success": true,
+  "projectFilePath": "/Users/lincolnbicalho/Projects/LJBLab/BlazorJwtAuthApiDemo/BlazorJwtAuthApiDemo.Shared/BlazorJwtAuthApiDemo.Shared.csproj",
+  "expectedPackageFiles": [
+    "/Users/lincolnbicalho/.nuget/packages/microsoft.aspnetcore.authorization/8.0.11/microsoft.aspnetcore.authorization.8.0.11.nupkg.sha512",
+    "/Users/lincolnbicalho/.nuget/packages/microsoft.aspnetcore.components/8.0.11/microsoft.aspnetcore.components.8.0.11.nupkg.sha512",
+    "/Users/lincolnbicalho/.nuget/packages/microsoft.aspnetcore.components.analyzers/8.0.11/microsoft.aspnetcore.components.analyzers.8.0.11.nupkg.sha512",
+    "/Users/lincolnbicalho/.nuget/packages/microsoft.aspnetcore.components.authorization/8.0.11/microsoft.aspnetcore.components.authorization.8.0.11.nupkg.sha512",
+    "/Users/lincolnbicalho/.nuget/packages/microsoft.aspnetcore.metadata/8.0.11/microsoft.aspnetcore.metadata.8.0.11.nupkg.sha512",
+    "/Users/lincolnbicalho/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.2/microsoft.extensions.dependencyinjection.abstractions.8.0.2.nupkg.sha512",
+    "/Users/lincolnbicalho/.nuget/packages/microsoft.extensions.logging.abstractions/8.0.2/microsoft.extensions.logging.abstractions.8.0.2.nupkg.sha512",
+    "/Users/lincolnbicalho/.nuget/packages/microsoft.extensions.options/8.0.2/microsoft.extensions.options.8.0.2.nupkg.sha512",
+    "/Users/lincolnbicalho/.nuget/packages/microsoft.extensions.primitives/8.0.0/microsoft.extensions.primitives.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

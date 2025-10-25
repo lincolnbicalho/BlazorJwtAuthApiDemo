@@ -1,0 +1,108 @@
+@page "/logout"
+@using BlazorJwtAuthApiDemo.Services
+@using Microsoft.AspNetCore.Components
+@inject IAuthService AuthService
+@inject NavigationManager Navigation
+
+<PageTitle>Logout - Blazor JWT Auth Demo</PageTitle>
+
+<div class="min-vh-100 bg-light d-flex align-items-center">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-4">
+                <div class="card shadow-sm border-0 rounded-4">
+                    <div class="card-body p-5 text-center">
+                        @if (isLoggingOut)
+                        {
+                            <div class="mb-4">
+                                <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
+                                    <span class="visually-hidden">Logging out...</span>
+                                </div>
+                            </div>
+                            <h3 class="fw-bold mb-2">Logging Out</h3>
+                            <p class="text-muted mb-0">Please wait...</p>
+                        }
+                        else if (logoutSuccess)
+                        {
+                            <div class="mb-4">
+                                <i class="bi bi-check-circle-fill text-success" style="font-size: 3rem;"></i>
+                            </div>
+                            <h3 class="fw-bold mb-2">Logged Out Successfully</h3>
+                            <p class="text-muted mb-0">Redirecting to login page...</p>
+                        }
+                        else if (!string.IsNullOrEmpty(errorMessage))
+                        {
+                            <div class="mb-4">
+                                <i class="bi bi-exclamation-triangle-fill text-warning" style="font-size: 3rem;"></i>
+                            </div>
+                            <h3 class="fw-bold mb-2">Logout Error</h3>
+                            <p class="text-danger mb-4">@errorMessage</p>
+                            <a href="/login" class="btn btn-primary">Go to Login</a>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    [CascadingParameter]
+    public HttpContext? HttpContext { get; set; }
+
+    private bool isLoggingOut = true;
+    private bool logoutSuccess = false;
+    private string errorMessage = "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        // WHY: Automatically logout when the page loads
+        await PerformLogout();
+    }
+
+    private async Task PerformLogout()
+    {
+        try
+        {
+            if (HttpContext == null)
+            {
+                errorMessage = "Unable to logout. Please try again.";
+                isLoggingOut = false;
+                return;
+            }
+
+            // Call the AuthService to clear the cookie
+            var success = await AuthService.LogoutAsync(HttpContext);
+
+            if (success)
+            {
+                isLoggingOut = false;
+                logoutSuccess = true;
+
+                // WHY: Brief delay to show success message before redirect
+                await Task.Delay(1500);
+
+                // Redirect to login page
+                Navigation.NavigateTo("/login", forceLoad: true);
+            }
+            else
+            {
+                isLoggingOut = false;
+                errorMessage = "Logout failed. Please try again.";
+            }
+        }
+        catch (NavigationException)
+        {
+            // WHY: Expected Blazor Server behavior when using forceLoad: true
+            // The navigation interrupts the SignalR circuit, causing this exception
+            // We need to rethrow it to allow the navigation to complete successfully
+            throw;
+        }
+        catch (Exception ex)
+        {
+            Console.Error.WriteLine($"Logout error: {ex.Message}");
+            isLoggingOut = false;
+            errorMessage = "An error occurred during logout.";
+        }
+    }
+}

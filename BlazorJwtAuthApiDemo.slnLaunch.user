@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "BlazorJwtAuthApiDemo\\BlazorJwtAuthApiDemo.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "BlazorJwtAuthApiDemo.Api\\BlazorJwtAuthApiDemo.Api.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

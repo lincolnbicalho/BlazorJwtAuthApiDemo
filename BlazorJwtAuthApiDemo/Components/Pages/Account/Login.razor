@@ -1,0 +1,169 @@
+@page "/login"
+@using BlazorJwtAuthApiDemo.Shared.Models
+@using BlazorJwtAuthApiDemo.Services
+@using Microsoft.AspNetCore.Components.Forms
+@using Microsoft.AspNetCore.Components
+@inject IAuthService AuthService
+@inject NavigationManager Navigation
+
+<PageTitle>Login - Blazor JWT Auth Demo</PageTitle>
+
+<div class="min-vh-100 bg-light d-flex align-items-center">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-5">
+                <!-- Login Card -->
+                <div class="card shadow-sm border-0 rounded-4">
+                    <div class="card-body p-5">
+                        <div class="text-center mb-4">
+                            <h2 class="fw-bold text-dark mb-2">Welcome Back!</h2>
+                            <p class="text-muted mb-0">Sign in to continue to the demo</p>
+                        </div>
+
+                        @if (!string.IsNullOrEmpty(errorMessage))
+                        {
+                            <div class="alert alert-danger border-0 rounded-3 mb-4">
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                                    @errorMessage
+                                </div>
+                            </div>
+                        }
+
+                        @if (!string.IsNullOrEmpty(successMessage))
+                        {
+                            <div class="alert alert-success border-0 rounded-3 mb-4">
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-check-circle-fill me-2"></i>
+                                    @successMessage
+                                </div>
+                            </div>
+                        }
+
+                        <EditForm Model="loginModel" OnValidSubmit="HandleLogin" FormName="LoginForm">
+                            <DataAnnotationsValidator />
+
+                            <div class="mb-3">
+                                <label for="email" class="form-label fw-semibold">Email Address</label>
+                                <InputText id="email" @bind-Value="loginModel.Email"
+                                           class="form-control form-control-lg"
+                                           placeholder="Enter your email" />
+                                <ValidationMessage For="@(() => loginModel.Email)" class="text-danger small mt-1" />
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="password" class="form-label fw-semibold">Password</label>
+                                <InputText id="password" @bind-Value="loginModel.Password" type="password"
+                                           class="form-control form-control-lg"
+                                           placeholder="Enter your password" />
+                                <ValidationMessage For="@(() => loginModel.Password)" class="text-danger small mt-1" />
+                            </div>
+
+                            <button type="submit" class="btn btn-primary w-100 btn-lg fw-semibold mb-3"
+                                    disabled="@isLoading">
+                                @if (isLoading)
+                                {
+                                    <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                                    <text>Signing In...</text>
+                                }
+                                else
+                                {
+                                    <text>Sign In</text>
+                                }
+                            </button>
+                        </EditForm>
+
+                        <!-- Sign Up Link -->
+                        <div class="text-center mt-4">
+                            <p class="text-muted mb-0">
+                                New to this demo?
+                                <a href="/register" class="text-decoration-none fw-semibold">
+                                    Create an account
+                                </a>
+                            </p>
+                        </div>
+
+                        <!-- Test Users Info -->
+                        <div class="mt-4 p-3 bg-light rounded-3">
+                            <h6 class="fw-bold mb-2">Test Users:</h6>
+                            <small class="d-block mb-1"><strong>Admin:</strong> admin@demo.com / Admin123!</small>
+                            <small class="d-block mb-1"><strong>Therapist:</strong> therapist@demo.com / Therapist123!</small>
+                            <small class="d-block"><strong>User:</strong> user@demo.com / User123!</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Back to Home -->
+                <div class="text-center mt-3">
+                    <a href="/" class="text-decoration-none text-muted">
+                        <i class="bi bi-arrow-left me-1"></i> Back to Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    [SupplyParameterFromQuery(Name = "returnUrl")]
+    public string? ReturnUrl { get; set; }
+
+    [SupplyParameterFromForm]
+    private LoginModel loginModel { get; set; } = new();
+
+    [CascadingParameter]
+    public HttpContext? HttpContext { get; set; }
+
+    private bool isLoading = false;
+    private string errorMessage = "";
+    private string successMessage = "";
+
+    private async Task HandleLogin()
+    {
+        isLoading = true;
+        errorMessage = "";
+        successMessage = "";
+
+        try
+        {
+            if (HttpContext == null)
+            {
+                errorMessage = "Login process error. Please try again.";
+                return;
+            }
+
+            var response = await AuthService.LoginAsync(HttpContext, loginModel);
+
+            if (response != null)
+            {
+                successMessage = "Login successful! Redirecting...";
+                await Task.Delay(500); // Brief delay to show success message
+
+                var target = string.IsNullOrWhiteSpace(ReturnUrl) ? "/" : ReturnUrl;
+                // WHY: Use normal navigation (not forceLoad) to allow TokenBridge to transfer JWT to localStorage
+                // HOW: Normal navigation preserves the circuit and allows interactive components to complete
+                Navigation.NavigateTo(target, forceLoad: false);
+            }
+            else
+            {
+                errorMessage = "Invalid email or password. Please try again.";
+            }
+        }
+        catch (NavigationException)
+        {
+            // WHY: Expected Blazor Server behavior when using forceLoad: true
+            // The navigation interrupts the SignalR circuit, causing this exception
+            // We need to rethrow it to allow the navigation to complete successfully
+            throw;
+        }
+        catch (Exception ex)
+        {
+            Console.Error.WriteLine($"Login error: {ex.Message}");
+            errorMessage = "An error occurred during login. Please try again.";
+        }
+        finally
+        {
+            isLoading = false;
+        }
+    }
+}

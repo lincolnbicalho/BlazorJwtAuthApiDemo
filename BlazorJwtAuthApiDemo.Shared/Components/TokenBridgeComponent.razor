@@ -1,0 +1,64 @@
+@namespace BlazorJwtAuthApiDemo.Shared
+@using Microsoft.AspNetCore.Components.Authorization
+@using System.Security.Claims
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject IJSRuntime JSRuntime
+@inject ILogger<TokenBridgeComponent> Logger
+@rendermode InteractiveAuto
+
+@code {
+    /// <summary>
+    /// Token Bridge Component for Blazor 8 InteractiveAuto Mode
+    ///
+    /// PURPOSE: Transfer JWT tokens from server-side storage (cookie/session/claims)
+    ///          to client-side localStorage for WebAssembly components
+    ///
+    /// WHY: During server-side login, JavaScript interop is NOT available,
+    ///      so tokens can only be stored in Session/Cookies. WebAssembly components
+    ///      need tokens in localStorage. This component bridges that gap.
+    ///
+    /// HOW: Runs OnAfterRenderAsync (when JS is available) and transfers tokens
+    ///      from ClaimsPrincipal to localStorage
+    /// </summary>
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (!firstRender)
+            return;
+
+        try
+        {
+            // STEP 1: Get authentication state
+            var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+            var user = authState.User;
+
+            if (!user.Identity?.IsAuthenticated ?? true)
+            {
+                return;
+            }
+
+            // STEP 2: Extract JWT token from claims
+            // WHY: AuthService.LoginAsync stores JWT as "jwt" claim (Server mode only)
+            // NOTE: In WASM mode, there's no "jwt" claim, so this will be a no-op
+            var jwtClaim = user.FindFirst("jwt");
+
+            if (jwtClaim == null || string.IsNullOrEmpty(jwtClaim.Value))
+            {
+                return;
+            }
+
+            var token = jwtClaim.Value;
+
+            // STEP 3: Store token in localStorage for WebAssembly components
+            // WHY: ClientAuthTokenService reads from localStorage
+            // HOW: Use JSRuntime.InvokeVoidAsync (safe in OnAfterRenderAsync)
+            await JSRuntime.InvokeVoidAsync("localStorage.setItem", "auth_token", token);
+
+            Logger.LogInformation("Token bridge: Successfully transferred JWT to localStorage for user {User}", user.Identity.Name);
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError(ex, "Token bridge: Failed to transfer JWT to localStorage");
+        }
+    }
+}

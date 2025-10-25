@@ -1,0 +1,202 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\bical\\source\\repos\\BlazorJwtAuthApiDemo\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F96F450C-DF73-470E-B518-E7B38D9DC8F4}|BlazorJwtAuthApiDemo.Client\\BlazorJwtAuthApiDemo.Client.csproj|c:\\users\\bical\\source\\repos\\blazorjwtauthapidemo\\blazorjwtauthapidemo.client\\pages\\weather.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F96F450C-DF73-470E-B518-E7B38D9DC8F4}|BlazorJwtAuthApiDemo.Client\\BlazorJwtAuthApiDemo.Client.csproj|solutionrelative:blazorjwtauthapidemo.client\\pages\\weather.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{918DD3E0-2604-4635-AA73-E2E02D8C0E36}|BlazorJwtAuthApiDemo\\BlazorJwtAuthApiDemo.csproj|c:\\users\\bical\\source\\repos\\blazorjwtauthapidemo\\blazorjwtauthapidemo\\components\\pages\\account\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{918DD3E0-2604-4635-AA73-E2E02D8C0E36}|BlazorJwtAuthApiDemo\\BlazorJwtAuthApiDemo.csproj|solutionrelative:blazorjwtauthapidemo\\components\\pages\\account\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{918DD3E0-2604-4635-AA73-E2E02D8C0E36}|BlazorJwtAuthApiDemo\\BlazorJwtAuthApiDemo.csproj|c:\\users\\bical\\source\\repos\\blazorjwtauthapidemo\\blazorjwtauthapidemo\\services\\hybridauthtokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{918DD3E0-2604-4635-AA73-E2E02D8C0E36}|BlazorJwtAuthApiDemo\\BlazorJwtAuthApiDemo.csproj|solutionrelative:blazorjwtauthapidemo\\services\\hybridauthtokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F96F450C-DF73-470E-B518-E7B38D9DC8F4}|BlazorJwtAuthApiDemo.Client\\BlazorJwtAuthApiDemo.Client.csproj|c:\\users\\bical\\source\\repos\\blazorjwtauthapidemo\\blazorjwtauthapidemo.client\\services\\clientauthtokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F96F450C-DF73-470E-B518-E7B38D9DC8F4}|BlazorJwtAuthApiDemo.Client\\BlazorJwtAuthApiDemo.Client.csproj|solutionrelative:blazorjwtauthapidemo.client\\services\\clientauthtokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85A28708-EA93-4567-A878-7B12604E7271}|BlazorJwtAuthApiDemo.Shared\\BlazorJwtAuthApiDemo.Shared.csproj|c:\\users\\bical\\source\\repos\\blazorjwtauthapidemo\\blazorjwtauthapidemo.shared\\services\\customauthstateprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85A28708-EA93-4567-A878-7B12604E7271}|BlazorJwtAuthApiDemo.Shared\\BlazorJwtAuthApiDemo.Shared.csproj|solutionrelative:blazorjwtauthapidemo.shared\\services\\customauthstateprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F96F450C-DF73-470E-B518-E7B38D9DC8F4}|BlazorJwtAuthApiDemo.Client\\BlazorJwtAuthApiDemo.Client.csproj|c:\\users\\bical\\source\\repos\\blazorjwtauthapidemo\\blazorjwtauthapidemo.client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F96F450C-DF73-470E-B518-E7B38D9DC8F4}|BlazorJwtAuthApiDemo.Client\\BlazorJwtAuthApiDemo.Client.csproj|solutionrelative:blazorjwtauthapidemo.client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{918DD3E0-2604-4635-AA73-E2E02D8C0E36}|BlazorJwtAuthApiDemo\\BlazorJwtAuthApiDemo.csproj|c:\\users\\bical\\source\\repos\\blazorjwtauthapidemo\\blazorjwtauthapidemo\\components\\pages\\account\\register.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{918DD3E0-2604-4635-AA73-E2E02D8C0E36}|BlazorJwtAuthApiDemo\\BlazorJwtAuthApiDemo.csproj|solutionrelative:blazorjwtauthapidemo\\components\\pages\\account\\register.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F96F450C-DF73-470E-B518-E7B38D9DC8F4}|BlazorJwtAuthApiDemo.Client\\BlazorJwtAuthApiDemo.Client.csproj|c:\\users\\bical\\source\\repos\\blazorjwtauthapidemo\\blazorjwtauthapidemo.client\\services\\apiauthorizationmessagehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F96F450C-DF73-470E-B518-E7B38D9DC8F4}|BlazorJwtAuthApiDemo.Client\\BlazorJwtAuthApiDemo.Client.csproj|solutionrelative:blazorjwtauthapidemo.client\\services\\apiauthorizationmessagehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{918DD3E0-2604-4635-AA73-E2E02D8C0E36}|BlazorJwtAuthApiDemo\\BlazorJwtAuthApiDemo.csproj|c:\\users\\bical\\source\\repos\\blazorjwtauthapidemo\\blazorjwtauthapidemo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{918DD3E0-2604-4635-AA73-E2E02D8C0E36}|BlazorJwtAuthApiDemo\\BlazorJwtAuthApiDemo.csproj|solutionrelative:blazorjwtauthapidemo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F96F450C-DF73-470E-B518-E7B38D9DC8F4}|BlazorJwtAuthApiDemo.Client\\BlazorJwtAuthApiDemo.Client.csproj|c:\\users\\bical\\source\\repos\\blazorjwtauthapidemo\\blazorjwtauthapidemo.client\\pages\\counter.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F96F450C-DF73-470E-B518-E7B38D9DC8F4}|BlazorJwtAuthApiDemo.Client\\BlazorJwtAuthApiDemo.Client.csproj|solutionrelative:blazorjwtauthapidemo.client\\pages\\counter.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 12,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HybridAuthTokenService.cs",
+              "DocumentMoniker": "C:\\Users\\bical\\source\\repos\\BlazorJwtAuthApiDemo\\BlazorJwtAuthApiDemo\\Services\\HybridAuthTokenService.cs",
+              "RelativeDocumentMoniker": "BlazorJwtAuthApiDemo\\Services\\HybridAuthTokenService.cs",
+              "ToolTip": "C:\\Users\\bical\\source\\repos\\BlazorJwtAuthApiDemo\\BlazorJwtAuthApiDemo\\Services\\HybridAuthTokenService.cs",
+              "RelativeToolTip": "BlazorJwtAuthApiDemo\\Services\\HybridAuthTokenService.cs",
+              "ViewState": "AgIAAIkAAAAAAAAAAAAAAIoAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-24T20:08:49.231Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ClientAuthTokenService.cs",
+              "DocumentMoniker": "C:\\Users\\bical\\source\\repos\\BlazorJwtAuthApiDemo\\BlazorJwtAuthApiDemo.Client\\Services\\ClientAuthTokenService.cs",
+              "RelativeDocumentMoniker": "BlazorJwtAuthApiDemo.Client\\Services\\ClientAuthTokenService.cs",
+              "ToolTip": "C:\\Users\\bical\\source\\repos\\BlazorJwtAuthApiDemo\\BlazorJwtAuthApiDemo.Client\\Services\\ClientAuthTokenService.cs",
+              "RelativeToolTip": "BlazorJwtAuthApiDemo.Client\\Services\\ClientAuthTokenService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-24T18:35:45.242Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\bical\\source\\repos\\BlazorJwtAuthApiDemo\\BlazorJwtAuthApiDemo.Client\\Program.cs",
+              "RelativeDocumentMoniker": "BlazorJwtAuthApiDemo.Client\\Program.cs",
+              "ToolTip": "C:\\Users\\bical\\source\\repos\\BlazorJwtAuthApiDemo\\BlazorJwtAuthApiDemo.Client\\Program.cs",
+              "RelativeToolTip": "BlazorJwtAuthApiDemo.Client\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-24T17:35:56.039Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Login.razor",
+              "DocumentMoniker": "C:\\Users\\bical\\source\\repos\\BlazorJwtAuthApiDemo\\BlazorJwtAuthApiDemo\\Components\\Pages\\Account\\Login.razor",
+              "RelativeDocumentMoniker": "BlazorJwtAuthApiDemo\\Components\\Pages\\Account\\Login.razor",
+              "ToolTip": "C:\\Users\\bical\\source\\repos\\BlazorJwtAuthApiDemo\\BlazorJwtAuthApiDemo\\Components\\Pages\\Account\\Login.razor",
+              "RelativeToolTip": "BlazorJwtAuthApiDemo\\Components\\Pages\\Account\\Login.razor",
+              "ViewState": "AgIAAHIAAAAAAAAAAAAWwIYAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-16T14:37:07.985Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Register.razor",
+              "DocumentMoniker": "C:\\Users\\bical\\source\\repos\\BlazorJwtAuthApiDemo\\BlazorJwtAuthApiDemo\\Components\\Pages\\Account\\Register.razor",
+              "RelativeDocumentMoniker": "BlazorJwtAuthApiDemo\\Components\\Pages\\Account\\Register.razor",
+              "ToolTip": "C:\\Users\\bical\\source\\repos\\BlazorJwtAuthApiDemo\\BlazorJwtAuthApiDemo\\Components\\Pages\\Account\\Register.razor",
+              "RelativeToolTip": "BlazorJwtAuthApiDemo\\Components\\Pages\\Account\\Register.razor",
+              "ViewState": "AgIAAF8AAAAAAAAAAAAWwHcAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-16T14:37:05.851Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ApiAuthorizationMessageHandler.cs",
+              "DocumentMoniker": "C:\\Users\\bical\\source\\repos\\BlazorJwtAuthApiDemo\\BlazorJwtAuthApiDemo.Client\\Services\\ApiAuthorizationMessageHandler.cs",
+              "RelativeDocumentMoniker": "BlazorJwtAuthApiDemo.Client\\Services\\ApiAuthorizationMessageHandler.cs",
+              "ToolTip": "C:\\Users\\bical\\source\\repos\\BlazorJwtAuthApiDemo\\BlazorJwtAuthApiDemo.Client\\Services\\ApiAuthorizationMessageHandler.cs",
+              "RelativeToolTip": "BlazorJwtAuthApiDemo.Client\\Services\\ApiAuthorizationMessageHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T13:54:12.713Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CustomAuthStateProvider.cs",
+              "DocumentMoniker": "C:\\Users\\bical\\source\\repos\\BlazorJwtAuthApiDemo\\BlazorJwtAuthApiDemo.Shared\\Services\\CustomAuthStateProvider.cs",
+              "RelativeDocumentMoniker": "BlazorJwtAuthApiDemo.Shared\\Services\\CustomAuthStateProvider.cs",
+              "ToolTip": "C:\\Users\\bical\\source\\repos\\BlazorJwtAuthApiDemo\\BlazorJwtAuthApiDemo.Shared\\Services\\CustomAuthStateProvider.cs",
+              "RelativeToolTip": "BlazorJwtAuthApiDemo.Shared\\Services\\CustomAuthStateProvider.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T13:50:56.495Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\bical\\source\\repos\\BlazorJwtAuthApiDemo\\BlazorJwtAuthApiDemo\\Program.cs",
+              "RelativeDocumentMoniker": "BlazorJwtAuthApiDemo\\Program.cs",
+              "ToolTip": "C:\\Users\\bical\\source\\repos\\BlazorJwtAuthApiDemo\\BlazorJwtAuthApiDemo\\Program.cs",
+              "RelativeToolTip": "BlazorJwtAuthApiDemo\\Program.cs",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAswGMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T13:48:58.356Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Weather.razor",
+              "DocumentMoniker": "C:\\Users\\bical\\source\\repos\\BlazorJwtAuthApiDemo\\BlazorJwtAuthApiDemo.Client\\Pages\\Weather.razor",
+              "RelativeDocumentMoniker": "BlazorJwtAuthApiDemo.Client\\Pages\\Weather.razor",
+              "ToolTip": "C:\\Users\\bical\\source\\repos\\BlazorJwtAuthApiDemo\\BlazorJwtAuthApiDemo.Client\\Pages\\Weather.razor",
+              "RelativeToolTip": "BlazorJwtAuthApiDemo.Client\\Pages\\Weather.razor",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAAIAAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-16T04:54:49.192Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Counter.razor",
+              "DocumentMoniker": "C:\\Users\\bical\\source\\repos\\BlazorJwtAuthApiDemo\\BlazorJwtAuthApiDemo.Client\\Pages\\Counter.razor",
+              "RelativeDocumentMoniker": "BlazorJwtAuthApiDemo.Client\\Pages\\Counter.razor",
+              "ToolTip": "C:\\Users\\bical\\source\\repos\\BlazorJwtAuthApiDemo\\BlazorJwtAuthApiDemo.Client\\Pages\\Counter.razor",
+              "RelativeToolTip": "BlazorJwtAuthApiDemo.Client\\Pages\\Counter.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-16T04:24:02.549Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

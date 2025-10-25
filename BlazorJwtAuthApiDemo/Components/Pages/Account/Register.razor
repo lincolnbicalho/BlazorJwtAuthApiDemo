@@ -1,0 +1,144 @@
+@page "/register"
+@using BlazorJwtAuthApiDemo.Shared.Models
+@using BlazorJwtAuthApiDemo.Services
+@using Microsoft.AspNetCore.Components.Forms
+@using Microsoft.AspNetCore.Components
+@inject IAuthService AuthService
+@inject NavigationManager Navigation
+
+<PageTitle>Register - Blazor JWT Auth Demo</PageTitle>
+
+<div class="min-vh-100 bg-light d-flex align-items-center">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-5">
+                <div class="card shadow-sm border-0 rounded-4">
+                    <div class="card-body p-5">
+                        <div class="text-center mb-4">
+                            <h2 class="fw-bold text-dark mb-2">Create Account</h2>
+                            <p class="text-muted mb-0">Join the Blazor JWT Auth Demo</p>
+                        </div>
+
+                        @if (!string.IsNullOrEmpty(errorMessage))
+                        {
+                            <div class="alert alert-danger border-0 rounded-3 mb-4">
+                                @errorMessage
+                            </div>
+                        }
+
+                        <EditForm Model="registerModel" OnValidSubmit="HandleRegister" FormName="RegisterForm">
+                            <DataAnnotationsValidator />
+
+                            <div class="mb-3">
+                                <label for="firstName" class="form-label fw-semibold">First Name</label>
+                                <InputText id="firstName" @bind-Value="registerModel.FirstName"
+                                           class="form-control" placeholder="John" />
+                                <ValidationMessage For="@(() => registerModel.FirstName)" class="text-danger small" />
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="lastName" class="form-label fw-semibold">Last Name</label>
+                                <InputText id="lastName" @bind-Value="registerModel.LastName"
+                                           class="form-control" placeholder="Doe" />
+                                <ValidationMessage For="@(() => registerModel.LastName)" class="text-danger small" />
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="email" class="form-label fw-semibold">Email Address</label>
+                                <InputText id="email" @bind-Value="registerModel.Email"
+                                           class="form-control" placeholder="john@example.com" />
+                                <ValidationMessage For="@(() => registerModel.Email)" class="text-danger small" />
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="password" class="form-label fw-semibold">Password</label>
+                                <InputText id="password" @bind-Value="registerModel.Password" type="password"
+                                           class="form-control" />
+                                <ValidationMessage For="@(() => registerModel.Password)" class="text-danger small" />
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="confirmPassword" class="form-label fw-semibold">Confirm Password</label>
+                                <InputText id="confirmPassword" @bind-Value="registerModel.ConfirmPassword" type="password"
+                                           class="form-control" />
+                                <ValidationMessage For="@(() => registerModel.ConfirmPassword)" class="text-danger small" />
+                            </div>
+
+                            <button type="submit" class="btn btn-primary w-100 btn-lg fw-semibold mb-3" disabled="@isLoading">
+                                @if (isLoading)
+                                {
+                                    <span class="spinner-border spinner-border-sm me-2"></span>
+                                    <text>Creating Account...</text>
+                                }
+                                else
+                                {
+                                    <text>Create Account</text>
+                                }
+                            </button>
+                        </EditForm>
+
+                        <div class="text-center mt-4">
+                            <p class="text-muted mb-0">
+                                Already have an account?
+                                <a href="/login" class="text-decoration-none fw-semibold">Sign in</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    [SupplyParameterFromForm]
+    private RegisterModel registerModel { get; set; } = new();
+
+    [CascadingParameter]
+    public HttpContext? HttpContext { get; set; }
+
+    private bool isLoading = false;
+    private string errorMessage = "";
+
+    private async Task HandleRegister()
+    {
+        isLoading = true;
+        errorMessage = "";
+
+        try
+        {
+            if (HttpContext == null)
+            {
+                errorMessage = "Registration error. Please try again.";
+                return;
+            }
+
+            var response = await AuthService.RegisterAsync(HttpContext, registerModel);
+
+            if (response != null)
+            {
+                Navigation.NavigateTo("/dashboard", forceLoad: true);
+            }
+            else
+            {
+                errorMessage = "Registration failed. Email may already be in use.";
+            }
+        }
+        catch (NavigationException)
+        {
+            // WHY: Expected Blazor Server behavior when using forceLoad: true
+            // The navigation interrupts the SignalR circuit, causing this exception
+            // We need to rethrow it to allow the navigation to complete successfully
+            throw;
+        }
+        catch (Exception ex)
+        {
+            Console.Error.WriteLine($"Registration error: {ex.Message}");
+            errorMessage = "An error occurred during registration. Please try again.";
+        }
+        finally
+        {
+            isLoading = false;
+        }
+    }
+}

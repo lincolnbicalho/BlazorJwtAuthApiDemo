@@ -1,0 +1,248 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/lincolnbicalho/Projects/LJBLab/BlazorJwtAuthApiDemo/BlazorJwtAuthApiDemo/BlazorJwtAuthApiDemo.csproj": {}
+  },
+  "projects": {
+    "/Users/lincolnbicalho/Projects/LJBLab/BlazorJwtAuthApiDemo/BlazorJwtAuthApiDemo.Client/BlazorJwtAuthApiDemo.Client.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/lincolnbicalho/Projects/LJBLab/BlazorJwtAuthApiDemo/BlazorJwtAuthApiDemo.Client/BlazorJwtAuthApiDemo.Client.csproj",
+        "projectName": "BlazorJwtAuthApiDemo.Client",
+        "projectPath": "/Users/lincolnbicalho/Projects/LJBLab/BlazorJwtAuthApiDemo/BlazorJwtAuthApiDemo.Client/BlazorJwtAuthApiDemo.Client.csproj",
+        "packagesPath": "/Users/lincolnbicalho/.nuget/packages/",
+        "outputPath": "/Users/lincolnbicalho/Projects/LJBLab/BlazorJwtAuthApiDemo/BlazorJwtAuthApiDemo.Client/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/lincolnbicalho/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/lincolnbicalho/Projects/LJBLab/BlazorJwtAuthApiDemo/BlazorJwtAuthApiDemo.Shared/BlazorJwtAuthApiDemo.Shared.csproj": {
+                "projectPath": "/Users/lincolnbicalho/Projects/LJBLab/BlazorJwtAuthApiDemo/BlazorJwtAuthApiDemo.Shared/BlazorJwtAuthApiDemo.Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Components.WebAssembly": {
+              "target": "Package",
+              "version": "[8.0.20, )"
+            },
+            "Microsoft.NET.ILLink.Tasks": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.17, )",
+              "autoReferenced": true
+            },
+            "Microsoft.NET.Sdk.WebAssembly.Pack": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.21, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Runtime.Mono.browser-wasm",
+              "version": "[8.0.21, 8.0.21]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.411/PortableRuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "browser-wasm": {
+          "#import": []
+        }
+      }
+    },
+    "/Users/lincolnbicalho/Projects/LJBLab/BlazorJwtAuthApiDemo/BlazorJwtAuthApiDemo.Shared/BlazorJwtAuthApiDemo.Shared.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/lincolnbicalho/Projects/LJBLab/BlazorJwtAuthApiDemo/BlazorJwtAuthApiDemo.Shared/BlazorJwtAuthApiDemo.Shared.csproj",
+        "projectName": "BlazorJwtAuthApiDemo.Shared",
+        "projectPath": "/Users/lincolnbicalho/Projects/LJBLab/BlazorJwtAuthApiDemo/BlazorJwtAuthApiDemo.Shared/BlazorJwtAuthApiDemo.Shared.csproj",
+        "packagesPath": "/Users/lincolnbicalho/.nuget/packages/",
+        "outputPath": "/Users/lincolnbicalho/Projects/LJBLab/BlazorJwtAuthApiDemo/BlazorJwtAuthApiDemo.Shared/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/lincolnbicalho/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Components.Authorization": {
+              "target": "Package",
+              "version": "[8.0.11, )"
+            },
+            "Microsoft.Extensions.Logging.Abstractions": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.411/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/lincolnbicalho/Projects/LJBLab/BlazorJwtAuthApiDemo/BlazorJwtAuthApiDemo/BlazorJwtAuthApiDemo.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/lincolnbicalho/Projects/LJBLab/BlazorJwtAuthApiDemo/BlazorJwtAuthApiDemo/BlazorJwtAuthApiDemo.csproj",
+        "projectName": "BlazorJwtAuthApiDemo",
+        "projectPath": "/Users/lincolnbicalho/Projects/LJBLab/BlazorJwtAuthApiDemo/BlazorJwtAuthApiDemo/BlazorJwtAuthApiDemo.csproj",
+        "packagesPath": "/Users/lincolnbicalho/.nuget/packages/",
+        "outputPath": "/Users/lincolnbicalho/Projects/LJBLab/BlazorJwtAuthApiDemo/BlazorJwtAuthApiDemo/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/lincolnbicalho/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/lincolnbicalho/Projects/LJBLab/BlazorJwtAuthApiDemo/BlazorJwtAuthApiDemo.Client/BlazorJwtAuthApiDemo.Client.csproj": {
+                "projectPath": "/Users/lincolnbicalho/Projects/LJBLab/BlazorJwtAuthApiDemo/BlazorJwtAuthApiDemo.Client/BlazorJwtAuthApiDemo.Client.csproj"
+              },
+              "/Users/lincolnbicalho/Projects/LJBLab/BlazorJwtAuthApiDemo/BlazorJwtAuthApiDemo.Shared/BlazorJwtAuthApiDemo.Shared.csproj": {
+                "projectPath": "/Users/lincolnbicalho/Projects/LJBLab/BlazorJwtAuthApiDemo/BlazorJwtAuthApiDemo.Shared/BlazorJwtAuthApiDemo.Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Authentication.Cookies": {
+              "target": "Package",
+              "version": "[2.3.0, )"
+            },
+            "Microsoft.AspNetCore.Components.WebAssembly.Server": {
+              "target": "Package",
+              "version": "[8.0.20, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.411/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
